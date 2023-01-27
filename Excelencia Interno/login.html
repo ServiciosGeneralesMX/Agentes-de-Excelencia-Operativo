@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+
+    <!--Vinculación con el archivo normalize.css-->
+    <link rel="preload" href="css/normalize.css" as="style" >
+    <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+    
+   <!--Enlace para la API de Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <script src='main.js'></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+   <!--Es importante tener declaradas las librerías antes de declarar en enlace con una hoja de estilos externa-->
+   
+
+   <!--Vinculación del HTML a la hoja de estilos-->
+   <link rel="preload" href="css/style-login.css" as="style" >
+   <link href="css/style-login.css" rel="stylesheet">
+   <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+
+
+</head>
+
+
+<!-- https://codepen.io/goodkatz/pen/LYPGxQz -->
+<div class="header">
+
+    <!--Content before waves-->
+    <div class="inner-header flex">
+    </div>
+    
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+    
+</div>
+<!--Header ends-->
+    
+    <!--Content starts-->
+    <body>
+        <section class="form-login">
+    
+            <h5>Inicia Sesión</h5>
+    
+            <input class="controls" type="text" id="remitente" placeholder="Usuario">
+            <input class="controls" type="text" id="receptor" placeholder="Contraseña">
+            
+            <input class="boton" type="submit" name="" value="Ingresar" >
+      
+              <p class="separar-encimados">
+                <a href="index.html" >Regresar a la página principal</a>
+              </p>
+      
+        </section>
+    
+    </body>
+    <!--Content ends-->
+
+</html>

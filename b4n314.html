@@ -1,0 +1,226 @@
+<!--HTML PARA LA BANDEJA DE ENTRADA-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeja de Entrada - AE</title>
+    <!--Vinculación con el archivo normalize.css-->
+    <link rel="preload" href="css/normalize.css" as="style" >
+    <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+
+
+
+   <!--Enlace para la API de Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> -->
+   <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Libre+Baskerville&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <link rel="icon" href="img/agentescfst.png"> <!--ÍCONO DE LA PÁGINA-->
+
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous"> -->
+  
+   <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+   <!--Vinculación del HTML a la hoja de estilos-->
+   <link rel="preload" href="css/styles.css" as="style" >
+   <link href="css/styles.css" rel="stylesheet">
+   <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+</head>
+
+<body>
+    <header> <!-- HEADER-->
+        <div class="navegador-superior">
+                <nav class="black-nav-bar">
+                    <a href="https://www.up.edu.mx/">Universidad Panamericana</a>
+                    <p>|</p>
+                    <a href="./index.html">Agentes de Excelencia</a>
+                    <p>|</p>
+                    <a href="">Dirección de Operaciones</a>
+                </nav>
+            </div>
+            <div class="separador-navegador"></div>
+
+            <div class="navegador-inferior">
+            <div class="logo-izquierda">
+                <a href="./index.html"></a>
+            </div>
+            
+            <div class="main-links" id="main-links">
+                <div class="main-links-part">
+                    <nav class="main-links-nav">
+                        <a href="./index.html"" class="logged-in">Inicio</a>
+                        <a href="" class="logged-in">Historial</a>
+                        <a href="" class="logged-in ">Cerrar Ticket</a>
+                        <!--<button class="active-modalCerrar" id="CerrarTicket">Cerrar</button> -->
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="inferior-derecha">
+                <a href="index.html"></a>
+            </div>
+        </div>
+    </header> <!--END OF HEADER-->
+
+    
+    <section class="division-interfaz colocacion__cuerpo-bandeja">
+        <div class="contenedor-bandeja sombra" >
+            <h2>Bandeja de entrada</h2>
+                <hr>
+                <div class="grow1 layout__limite">
+                    <div id="bandeja"></div>
+                </div>
+        </div>
+    </section>
+
+
+    <section class="modal"> <!--VENTANA PARA MODAL RECHAZAR -->
+        <div class="modal__container">
+            <h2 class="modal_x">X</h2>
+            <h2 class="modal__title">Rechazar Solicitud</h2>
+            <form action="" class="formulario__lateral" id="rechazar-form">
+                <label for="rechazo-comments" class="uno-3-drop">Razón de rechazo:</label>
+                <textarea
+                    id="rechazar-razon"
+                    rows="3"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Razón de rechazo y comentarios"
+                    required
+                ></textarea>
+                <h3>
+                    Esta decisión será notificada por correo al usuario ¿Confirma la
+                    decisión?
+                </h3>
+                <button type="" class="formulario__btn-send btn-hover btn-rechazar-form" id="btn-rechazar-form" >
+                    Confirmar
+                </button>
+            </form>
+        </div>
+    </section> <!-- END OF MODAL RECHAZAR-->
+
+
+    <section class="modalAsig"> <!--VENTANA PARA MODAL ASIGNAR -->
+        <div class="modal__containerAsig">
+            <h2 class="modal_xAsig">X</h2>
+            <h2 class="modal__titleAsig"> Asignar Solicitud</h2>
+            <form action="" class="formulario__lateral" id="asignar-form">
+                <select id="asignar-area" required>
+                    <option disabled selected> --Área asignada-- </option>
+                    <option value="Intendencia">Intedencia</option>
+                    <option value="Express">Mantenimiento Express</option>
+                    <option value="Jardinería">Cerrajería</option>
+                    <option value="Electricista">Mantenimiento - Electricista</option>
+                    <option value="Carpintería">Mantenimiento - Carpintería</option>
+                    <option value="Obra">Mantenimiento - Obra</option>
+                    <!--<option value="Otra área">Otra</option> -->
+                </select>
+                <!--
+                <label class="margin-top" for="">ID del Agente:</label>
+                <input 
+                    type="text"
+                    id="asignar-id"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="ID del agente de Servicios Generales"
+                    autofocus
+                    required
+                /> -->
+
+                <label for="" class="uno-3-drop margin-top ">Comentarios Extras:</label>
+                <textarea
+                    id="asignar-comments"
+                    rows="3"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Comentarios y oberservaciones"
+                    required
+                ></textarea>
+                <h3>
+                    Esta decisión será notificada por correo al usuario ¿Confirma la
+                    asignación?
+                </h3>
+                <button class="formulario__btn-send btn-hover" id="btn-asignar-form" >
+                    Confirmar
+                </button>
+            </form>
+        </div>
+    </section> <!-- END OF MODAL ASIGNAR-->
+
+
+    <section class="modalCerrar"> <!--VENTANA PARA MODAL CERRAR TICKET -->
+        <div class="modal__containerCerrar">
+            <h2 class="modal_xCerrar">X</h2>
+            <h2 class="modal__titleCerrar"> Asignar Solicitud</h2>
+            <form action="" class="formulario__lateral" id="cerrar-form">
+                <label class="margin-top" for="">Ticket por cerrar:</label>
+                <input 
+                    type="text"
+                    id="cerrar-ticket"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Número de Ticket por cerrar"
+                    autofocus
+                    required
+                /> 
+
+                <label for="" class="uno-3-drop margin-top ">Comentarios Extras:</label>
+                <textarea
+                    id="cerrar-comments"
+                    rows="3"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Comentarios y oberservaciones"
+                    required
+                ></textarea>
+                <h3>
+                    Esta decisión será notificada por correo al usuario ¿Confirma la
+                    asignación?
+                </h3>
+                <button class="formulario__btn-send btn-hover" id="btn-cerrar-form" >
+                    Confirmar
+                </button>
+            </form>
+        </div>
+    </section> <!-- END OF MODAL CERRAR-->
+
+    
+
+    <!--DOCUMENTOS JS-->
+    <!-- Toastify js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- SCRIPTS -->
+    <script src='js/bandeja.js' type="module"></script>
+    <!--END OF DOCUMENTOS JS-->
+</body>
+
+
+
+
+<footer class="footer" id="footer">
+    <main class="container-footer">
+        <div class="footer1">
+            <div>
+                <img src="img/logo-up-alargado.png" alt="Universidad Panamericana" >
+            </div>
+            <div>
+                <hr>
+                <p>© 2022 Servicio AAP </p>
+            </div>
+        </div>
+        <div class="footer2">
+            <nav class="footer-nav-bar">
+                <a href="https://www.up.edu.mx/legales-terminos/">Términos y condiciones</a>
+                <p>|</p>
+                <a href="https://www.up.edu.mx/legales-politicas/">Política de Privacidad</a>
+                <p>|</p>
+                <a href="https://www.up.edu.mx/wp-content/uploads/2022/07/reglamento_general_agosto_2020_registro_sep.pdf">Reglamento General</a>
+            </nav>
+        </div>
+    </main>
+</footer>
+
+</html>

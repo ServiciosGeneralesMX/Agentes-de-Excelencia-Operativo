@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Generales</title>
+
+    <!--Vinculación con el archivo normalize.css-->
+    <link rel="preload" href="css/normalize.css" as="style" >
+    <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+    
+   <!--Enlace para la API de Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+   <link rel="icon" href="/img/logo1.jpeg"> <!--ÍCONO DE LA PÁGINA-->
+  
+
+    <!-- CUSTOM CODE -->
+    <script src="./index.js" type="module"></script>
+    
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+   <!--Es importante tener declaradas las librerías antes de declarar en enlace con una hoja de estilos externa-->
+   
+
+   <!--Vinculación del HTML a la hoja de estilos-->
+   <link rel="preload" href="css/style.css" as="style" >
+   <link href="css/style.css" rel="stylesheet">
+   <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+
+
+   
+   <!-- ........................................................................ 
+       SERÁ PARA EL USO PÚBLICO DE LAS DIFERENTES HERRAMIENTAS Y SERVICIOS QUE OFRECE
+       EL ÁREA DE Servicios Generales-->
+
+   <!--Proyecto hecho con BEM y Bootswatch-->
+</head>
+<!-- ----------------------------------------------------------------------------- -->
+
+<section class="layouts">
+
+    <div class="header">
+        <div class="nav-sup-bg "> <!-- NAVEGACIÓN SUPERIOR-->
+            <nav class="nav-sup contenedor"> <!--Se pueden poner varias clases separadas por espacios-->
+                <div class="hamburger-menu"> <!--Menu Hamburger-->
+                    <input type="checkbox" id="menu__toggle">
+                    <label for="menu__toggle" class="menu__btn">
+                        <span></span>
+                    </label>
+                    <ul class="menu__box">
+                        <li class="menu__icon-item"><a href="#" class="menu__item">Home</a></li>
+                        <li class="menu__icon-item" ><a href="#" class="menu__item">About</a></li>
+                        <li class="menu__icon-item"><a href="#" class="menu__item">Team</a></li>
+                        <li class="menu__icon-item"><a href="#" class="menu__item">Contact</a></li>
+                        <li class="menu__icon-item"><a href="login.html" class="menu__item">Log In</a></li>
+                    </ul>
+                </div> <!--End of Menu Hamburger-->
+
+                <div> <!--Main title-->
+                    <h2 class="nav-sup__title">Administración de Servicios </h2>
+                </div> <!--End of Main title-->
+                
+                <div class="profile-pill"> <!--Profile Picture pill-->
+                    <div id="perfil" class="profile-js"></div> <!--FROM JS DOC-->
+                </div> <!--End of profile Picture pill-->
+            </nav>
+        </div> <!-- END OF NAVEGACIÓN SUPERIOR-->
+
+        <div class="nav-bg ">
+            <nav class="navegacion-principal contenedor"> <!--Se pueden poner varias clases separadas por espacios-->
+                <a href="historial.html">Historial</a>
+                <a class="nav-activo"  href="index.html">Bandeja de entrada</a>
+                <a  href="informe.html">Generar Informe</a>
+                <!-- <a  href=""> Buscar Folio</a> -->
+                <input type="search" name="search" id="search" class="search-input" placeholder="Buscar Folio...">
+                
+                <!-- <input type="search" name="search" id="search"> -->
+            </nav>
+        </div>
+    
+    </div>
+
+
+    <div class="leftSide"> <!-- LEFT SIDE-->
+        <main class="contenedor sombra contenedor__lateral-izq" >
+            <div class="titulo__pildora-a"><h3 >Resumen General</h3></div>
+            <hr>
+            <div class="resumen-general" >
+                <div class="resumen-div"> <span>- Folios Totales:</span>  <div id="total-folios"></div> </div>
+                <div class="resumen-div"> <span>- Folios Abiertos:</span> <div id="abiertos-folios"></div> </div>
+                <div class="resumen-div"> <span>- Generados hoy:</span> </div>
+            </div>
+        </main>
+
+        <main class="contenedor sombra contenedor__lateral-izq margin-top" >
+            <div class="titulo__pildora-a"> <h3 >Resumen Personal</h3> </div>
+            <hr>
+            <div>
+                <p> <span>- Folios Cerrados:</span> </p>
+                <p> <span>- Folios Asignados:</span> </p>
+              </div>
+        </main>
+    </div> <!-- END OF LEFT SIDE-->
+
+
+    <div class="body "> <!-- BODY-->
+        <!-- Tasks List -->
+        <main class="contenedor sombra" >
+            <h2>Bandeja de entrada</h2>
+                <hr>
+                <div class="grow1 layout__limite">
+                    <div id="tasks-container"></div>
+                </div>
+        </main>
+
+        <section class="modal"> <!--VENTANA PARA MODAL RECHAZAR -->
+            <div class="modal__container">
+                <h2 class="modal_x">X</h2>
+                <h2 class="modal__title">Rechazar Solicitud</h2>
+                <form action="" class="formulario__lateral" id="rechazar-form">
+                    <label for="location">ID del Agente:</label>
+                    <input 
+                        type="text"
+                        id="rechazar-id"
+                        class="form-control mb-3 formulario__placeholder"
+                        placeholder="ID del agente de Servicios Generales"
+                        autofocus
+                        required
+                    />
+                    <label for="reason" class="uno-3-drop">Razón de rechazo:</label>
+                    <textarea
+                        id="rechazar-razon"
+                        rows="3"
+                        class="form-control mb-3 formulario__placeholder"
+                        placeholder="Razón de rechazo y comentarios"
+                        required
+                    ></textarea>
+                    <h3>
+                        Esta decisión será notificada por correo al usuario ¿Confirma la
+                        decisión?
+                    </h3>
+                    <button type="" class="formulario__btn-send btn-hover btn-rechazar-form" id="btn-rechazar-form" >
+                        Confirmar
+                    </button>
+                </form>
+            </div>
+        </section> <!-- END OF MODAL RECHAZAR-->
+
+        <section class="modalAsig"> <!--VENTANA PARA MODAL ASIGNAR -->
+            <div class="modal__containerAsig">
+                <h2 class="modal_xAsig">X</h2>
+                <h2 class="modal__titleAsig"> Asignar Solicitud</h2>
+                <form action="" class="formulario__lateral" id="asignar-form">
+                    <select id="asignar-area" required>
+                        <option disabled selected> --Área asignada-- </option>
+                        <option value="Intendencia">Intedencia</option>
+                        <option value="Movimientos">Movimientos</option>
+                        <option value="Cerrajería">Cerrajería</option>
+                        <option value="Material Didáctico">Material Didáctico</option>
+                        <option value="Electricista">Mantenimiento - Electricista</option>
+                        <option value="Carpintería">Mantenimiento - Carpintería</option>
+                        <option value="Obra">Mantenimiento - Obra</option>
+                        <option value="Otra área">Otra</option>
+                    </select>
+
+                    <label class="margin-top" for="">ID del Agente:</label>
+                    <input 
+                        type="text"
+                        id="asignar-id"
+                        class="form-control mb-3 formulario__placeholder"
+                        placeholder="ID del agente de Servicios Generales"
+                        autofocus
+                        required
+                    />
+
+                    <label for="" class="uno-3-drop">Comentarios Extras:</label>
+                    <textarea
+                        id="asignar-comments"
+                        rows="3"
+                        class="form-control mb-3 formulario__placeholder"
+                        placeholder="Comentarios y oberservaciones"
+                        required
+                    ></textarea>
+                    <h3>
+                        Esta decisión será notificada por correo al usuario ¿Confirma la
+                        asignación?
+                    </h3>
+                    <button class="formulario__btn-send btn-hover" id="btn-asignar-form" >
+                        Confirmar
+                    </button>
+                </form>
+            </div>
+        </section> <!-- END OF MODAL ASIGNAR-->
+    </div> <!-- END OF BODY -->
+
+
+    <div class="rightSide contenedor__lateral-der">  <!-- RIGHT SIDE-->
+        <main class="contenedor sombra">
+            <div class="titulo__pildora-a">
+                <h3 >Generar Nueva Solicitud</h3>
+            </div>
+            <form id="task-form" class="formulario__lateral separar-encimados">
+                <!-- <label for="title">Seleccione un Servicio:</label> -->
+                <select id="task-title" required>
+                    <option disabled selected> --Área asignada-- </option>
+                    <option value="Intendencia">Intedencia</option>
+                    <option value="Movimientos">Movimientos</option>
+                    <option value="Cerrajería">Cerrajería</option>
+                    <option value="Material Didáctico">Material Didáctico</option>
+                    <option value="Electricista">Mantenimiento - Electricista</option>
+                    <option value="Carpintería">Mantenimiento - Carpintería</option>
+                    <option value="Obra">Mantenimiento - Obra</option>
+                    <option value="Otra área">Otra</option>
+                </select>
+                
+                <label for="description" class="margin-top">Descripción:</label>
+                <textarea
+                    id="task-description"
+                    rows="2"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Describe detalladamente qué sucede"
+                    required
+                    
+                ></textarea>
+
+                <label for="location">Ubicación:</label>
+                <input 
+                    type="text"
+                    id="task-location"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Ej. Ingeniería 3er piso, oficina 3"
+                    required
+                />
+
+                <label for="contact">Contacto:</label>
+                <input 
+                    type="text"
+                    id="task-contact"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="Nombre de la persona que reporta"
+                    required
+                />
+
+                <label for="agente">ID del Agente:</label>
+                <input 
+                    type="text"
+                    id="task-agent"
+                    class="form-control mb-3 formulario__placeholder"
+                    placeholder="ID del agente de Servicios Generales"
+                    required
+                />
+
+                <label for="photo">Fotografía (Opcional):</label>
+                <input 
+                    type="file"
+                    id="task-photo"
+                    class=" mb-3 formulario__placeholder"
+                    accept=""
+                    multiple
+                />
+
+                <button class="formulario__btn-send btn-hover" id="btn-task-form" >
+                    Enviar
+                </button>
+            </form>
+        </main>
+
+        <main class="contenedor sombra margin-top">
+            <!-- <div class="titulo__pildora-a">
+                <h3 >Cerrar Folio</h3>
+            </div> -->
+            <form action="close-form" class="formulario__lateral " >
+                <input 
+                    type="text"
+                    id="close-number"
+                    class="form-control mb-3 formulario__placeholder margin-top"
+                    placeholder="# Número de Folio por Cerrar"
+                    required
+                />
+                <button class="formulario__btn-send btn-hover" id="btn-close-form" >
+                    Cerrar
+                </button>
+            </form>
+        </main>
+
+    </div> <!-- END OF RIGHT SIDE-->
+
+
+
+
+    <div class="footer"> <!-- FOOTER -->
+        <footer class="footer">
+            <p class="footer__texto">
+                Servicios Generales  |  Derechos Reservados 2022  |  Universidad Panamericana
+            </p>
+        </footer>
+    </div> <!-- END OF FOOTER -->
+</section>
+
+</html>
